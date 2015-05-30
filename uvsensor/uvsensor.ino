@@ -13,8 +13,8 @@
 #define MAC_ADDR_LEN    6   // Length of MAC address in bytes
 
 // Constants
-char ap_ssid[] = "rye";                               // SSID of network
-char ap_password[] = "Vancouver";                     // Password of network
+char ap_ssid[] = "WIFI_JU_1205";                      // SSID of network
+char ap_password[] = "sg207229";                      // Password of network
 unsigned int ap_security = WLAN_SEC_WPA2;             // Security of network
 unsigned int timeout = 30000;                         // Milliseconds
 char server[] = "arduino-temp-monitor.herokuapp.com"; // Remote host site

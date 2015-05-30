@@ -1,0 +1,20 @@
+{
+  "name": "uvi-socketio",
+  "version": "0.1.0",
+  "authors": [
+    "Ryan Yacyshyn <ryan@pebbleroad.com>"
+  ],
+  "description": "POSTs uv index to socket server",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation": "~5.4.3"
+  }
+}

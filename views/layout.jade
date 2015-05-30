@@ -1,0 +1,24 @@
+doctype html
+html
+	head
+		title= settings.title
+		link(rel='stylesheet', href='css/app.css')
+		link(rel='stylesheet', href='css/main.css')
+	body
+
+		block content
+
+		//- library scripts
+		script(src='bower_components/jquery/dist/jquery.min.js')
+		script(src='bower_components/foundation/js/foundation.min.js')
+		script(src='/socket.io/socket.io.js')
+		//- script.
+		//- 	var socket = io();
+		//- 	socket.emit('msg', 'hello');
+
+		//- ember application
+		//- script(src='js/templates.js')
+		script(src='js/main.js')
+		//- script(src='js/router.js')
+		//- script(src='js/models/PostModel.js')
+		//- script(src='js/controllers/PostsController.js')
