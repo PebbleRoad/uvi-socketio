@@ -34,7 +34,7 @@ router.post '/submit_data', (req, res) ->
 
   io.emit 'data:update', data
   
-  res.send { success: true, data: data }
+  res.send { success: true }
 
 app.use router
 
