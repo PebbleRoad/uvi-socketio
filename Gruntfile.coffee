@@ -28,6 +28,8 @@ module.exports = (grunt) ->
         files: [
           { expand: true, src: ['public/bower_components/jquery/dist/jquery.min.js'], dest: 'public/js/libs/', filter: 'isFile', flatten: true }
           { expand: true, src: ['public/bower_components/foundation/js/foundation.min.js'], dest: 'public/js/libs/', filter: 'isFile', flatten: true }
+          { expand: true, src: ['public/bower_components/FitText.js/jquery.fittext.js'], dest: 'public/js/libs/', filter: 'isFile', flatten: true }
+          { expand: true, src: ['public/bower_components/Chart.js/Chart.min.js'], dest: 'public/js/libs/', filter: 'isFile', flatten: true }
         ]
 
     # ----------------------

@@ -1,5 +1,12 @@
 extends layout
 
 block content
-	h1 Ultraviolet Index Monitor
-	.uvi-number 0
+  .row
+    .columns.small-12.medium-6.data
+      h2#uv-index 14.76
+    .columns.small-12.medium-6
+      canvas#indexChart(width="400" height="400")
+  .row
+    .columns.small-12.data
+      .panel Device ID: 28932-232
+        

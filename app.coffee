@@ -50,7 +50,7 @@ if app.get('env') is 'development'
   app.use (err, req, res, next)->
     res.status err.status || 500
     res.render 'error', { message: err.message, error: err }
-  app.set 'title', 'Arduino Temperature Monitor'
+  app.set 'title', 'Real-time Ultraviolet Index Monitor'
   app.locals.pretty = true
 
 # production error handler no stacktraces leaked to user

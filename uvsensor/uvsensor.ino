@@ -2,6 +2,8 @@
 #include <SFE_CC3000.h>
 #include <SFE_CC3000_Client.h>
 #include <stdlib.h>
+#include <Wire.h>
+#include "Adafruit_SI1145.h"
 
 // Pins
 #define CC3000_INT      2   // Needs to be an interrupt pin (D2/D3)
@@ -27,10 +29,19 @@ String mac_address = "";
 SFE_CC3000 wifi = SFE_CC3000(CC3000_INT, CC3000_EN, CC3000_CS);
 SFE_CC3000_Client client = SFE_CC3000_Client(wifi);
 
+// UV sensor..
+Adafruit_SI1145 uv = Adafruit_SI1145();
+
 void setup() {
   
   // Initialize Serial port
   Serial.begin(115200);
+
+  if (!uv.begin()) {
+    Serial.println("Didn't find Si1145");
+    while (1);
+  }
+
   Serial.println();
   Serial.println("---------------------------");
   Serial.println("SparkFun CC3000 - WebClient");
@@ -106,9 +117,10 @@ void loop() {
 
 void sendUVI () {
 
-  float uvi = 4.58;
+  float uvIndex = uv.readUV();
+  uvIndex /= 100.0;
 
-  postData(uvi);
+  postData(uvIndex);
 }
 
 void postData (float uvi) {

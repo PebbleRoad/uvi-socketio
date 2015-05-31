@@ -1,24 +1,37 @@
 doctype html
 html
-	head
-		title= settings.title
-		link(rel='stylesheet', href='css/app.css')
-		link(rel='stylesheet', href='css/main.css')
-	body
+  head
+    title= settings.title
+    link(rel='stylesheet', href='css/app.css')
+    link(rel='stylesheet', href='css/main.css')
+  body
 
-		block content
+    nav.top-bar(data-topbar, role="navigation")
+      ul.title-area
+        li.name
+          h1 Real-time Ultraviolet Index Monitor
 
-		//- library scripts
-		script(src='js/libs/jquery.min.js')
-		script(src='js/libs/foundation.min.js')
-		script(src='/socket.io/socket.io.js')
-		//- script.
-		//- 	var socket = io();
-		//- 	socket.emit('msg', 'hello');
+      section.top-bar-section
+        ul.right
+          li
+            a(href="http://www.pebbleroad.com" target="_blank")
+              img.pr-logo(src="img/pr-reverse.png")
 
-		//- ember application
-		//- script(src='js/templates.js')
-		script(src='js/main.js')
-		//- script(src='js/router.js')
-		//- script(src='js/models/PostModel.js')
-		//- script(src='js/controllers/PostsController.js')
+    block content
+
+    //- library scripts
+    script(src='js/libs/jquery.min.js')
+    script(src='js/libs/jquery.fittext.js')
+    script(src='js/libs/foundation.min.js')
+    script(src='js/libs/Chart.min.js')
+    script(src='/socket.io/socket.io.js')
+    //- script.
+    //-   var socket = io();
+    //-   socket.emit('msg', 'hello');
+
+    //- ember application
+    //- script(src='js/templates.js')
+    script(src='js/main.js')
+    //- script(src='js/router.js')
+    //- script(src='js/models/PostModel.js')
+    //- script(src='js/controllers/PostsController.js')
