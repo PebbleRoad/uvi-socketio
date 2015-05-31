@@ -25,6 +25,8 @@ uint16_t port = 80;
 String ip_address = "";
 String mac_address = "";
 
+bool macAddressSent = false;
+
 // Global Variables
 SFE_CC3000 wifi = SFE_CC3000(CC3000_INT, CC3000_EN, CC3000_CS);
 SFE_CC3000_Client client = SFE_CC3000_Client(wifi);
@@ -134,7 +136,14 @@ void postData (float uvi) {
     Serial.println("Error: Could not make a TCP connection");
   }
 
-  String data = "uvi=" + String(uvi) + "&ip=" + ip_address + "&mac=" + mac_address;
+  String data = "";
+  if (!macAddressSent) {
+    data = "uvi=" + String(uvi) + "&mac=" + mac_address;
+    macAddressSent = true;
+  }
+  else {
+    data = "uvi=" + String(uvi);
+  }
 
   // Make a HTTP POST request..
   client.println("POST /submit_data HTTP/1.1");

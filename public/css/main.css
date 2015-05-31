@@ -3,27 +3,31 @@ body {
   background: #FFF;
 }
 
-/* line 14, ../scss/views/_home.scss */
+/* line 13, ../scss/views/_home.scss */
+.title-area {
+  padding-left: 20px;
+}
+/* line 15, ../scss/views/_home.scss */
 .title-area h1 {
   color: #FFF;
 }
 
-/* line 19, ../scss/views/_home.scss */
+/* line 20, ../scss/views/_home.scss */
 .pr-logo {
   height: 43px;
 }
 
-/* line 23, ../scss/views/_home.scss */
+/* line 24, ../scss/views/_home.scss */
 .row {
   padding: 20px 0;
 }
 
-/* line 27, ../scss/views/_home.scss */
+/* line 28, ../scss/views/_home.scss */
 .data {
   text-align: center;
 }
 
-/* line 31, ../scss/views/_home.scss */
+/* line 32, ../scss/views/_home.scss */
 .panel {
   color: #555;
   font-size: 12px;

@@ -30,7 +30,12 @@ router.get '/', (req, res) ->
 
 router.post '/submit_data', (req, res) ->
 
-  data = { uvi: req.body.uvi }
+  if req.body.mac?
+    console.log 'have mac address..'
+    data = { uvi: req.body.uvi, mac: req.body.mac }
+  else
+    data = { uvi: req.body.uvi }
+    console.log 'no mac address..'
 
   io.emit 'data:update', data
   
