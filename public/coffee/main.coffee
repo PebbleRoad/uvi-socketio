@@ -15,7 +15,7 @@ $ ->
         strokeColor: 'rgba(220,220,220,0.8)'
         highlightFill: 'rgba(220,220,220,0.75)'
         highlightStroke: 'rgba(220,220,220,1)'
-        data: [5]
+        data: [0]
       }
     ]
 
@@ -45,6 +45,7 @@ $ ->
 
   socket.on 'data:update', (data) ->
     console.log 'in:', data
+    if data.mac? then $('.panel span').html(data.mac)
     $('.uv-index').html data.uvi
     chart.datasets[0].bars[0].value = parseFloat(data.uvi)
     # chart.datasets[0].bars[0].fillColor = 'green'

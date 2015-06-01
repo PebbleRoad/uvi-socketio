@@ -12,7 +12,7 @@ $(function() {
         strokeColor: 'rgba(220,220,220,0.8)',
         highlightFill: 'rgba(220,220,220,0.75)',
         highlightStroke: 'rgba(220,220,220,1)',
-        data: [5]
+        data: [0]
       }
     ]
   };
@@ -32,6 +32,9 @@ $(function() {
   socket.emit('msg', 'hello');
   socket.on('data:update', function(data) {
     console.log('in:', data);
+    if (data.mac != null) {
+      $('.panel span').html(data.mac);
+    }
     $('.uv-index').html(data.uvi);
     chart.datasets[0].bars[0].value = parseFloat(data.uvi);
     return chart.update();

@@ -27,8 +27,8 @@ body {
   text-align: center;
 }
 
-/* line 32, ../scss/views/_home.scss */
-.panel {
+/* line 33, ../scss/views/_home.scss */
+.panel p {
   color: #555;
-  font-size: 12px;
+  font-size: 14px;
 }
