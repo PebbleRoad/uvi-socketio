@@ -4,7 +4,7 @@ $(function() {
   $(document).foundation();
   $('#uv-index').fitText(0.3);
   data = {
-    labels: ['Now'],
+    labels: ['Current Index'],
     datasets: [
       {
         label: 'first set',
