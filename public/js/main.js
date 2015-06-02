@@ -1,5 +1,5 @@
 $(function() {
-  var chart, ctx, data, getColour, opts, socket, time, val;
+  var chart, ctx, data, getColour, opts, socket;
   console.log('ready..');
   $(document).foundation();
   $('#uv-index').fitText(0.3);
@@ -28,14 +28,6 @@ $(function() {
     responsive: true
   };
   chart = new Chart(ctx).Bar(data, opts);
-  val = 2.5;
-  setTimeout(function() {
-    chart.datasets[0].bars[0].value = val;
-    chart.datasets[0].bars[0].fillColor = getColour(val);
-    return chart.update();
-  }, 1500);
-  time = moment('2015-06-01T01:01:43.075Z', moment.ISO_8601).format('MMM Do YYYY | HH:mm:ss');
-  console.log(time);
   socket = io();
   socket.emit('msg', 'hello');
   socket.on('data:update', function(data) {

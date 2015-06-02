@@ -33,16 +33,15 @@ $ ->
 
   chart = new Chart(ctx).Bar(data, opts)
 
-  val = 2.5
-  setTimeout( ->
-    chart.datasets[0].bars[0].value = val
-    chart.datasets[0].bars[0].fillColor = getColour(val)
-    chart.update();
-  , 1500)
+  # val = 2.5
+  # setTimeout( ->
+  #   chart.datasets[0].bars[0].value = val
+  #   chart.datasets[0].bars[0].fillColor = getColour(val)
+  #   chart.update();
+  # , 1500)
 
-  time = moment('2015-06-01T01:01:43.075Z', moment.ISO_8601).format('MMM Do YYYY | HH:mm:ss')
-
-  console.log time
+  # time = moment('2015-06-01T01:01:43.075Z', moment.ISO_8601).format('MMM Do YYYY | HH:mm:ss')
+  # console.log time
 
   socket = io()
 
