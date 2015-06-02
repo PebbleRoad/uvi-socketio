@@ -33,11 +33,16 @@ $ ->
 
   chart = new Chart(ctx).Bar(data, opts)
 
-  # setTimeout( ->
-  #   chart.datasets[0].bars[0].value = 9
-  #   chart.datasets[0].bars[0].fillColor = 'green'
-  #   chart.update();
-  # , 2500)
+  val = 2.5
+  setTimeout( ->
+    chart.datasets[0].bars[0].value = val
+    chart.datasets[0].bars[0].fillColor = getColour(val)
+    chart.update();
+  , 1500)
+
+  time = moment('2015-06-01T01:01:43.075Z', moment.ISO_8601).format('MMM Do YYYY | HH:mm:ss')
+
+  console.log time
 
   socket = io()
 
@@ -48,8 +53,26 @@ $ ->
     if data.mac? then $('.panel span').html(data.mac)
     $('.uv-index').html data.uvi
     chart.datasets[0].bars[0].value = parseFloat(data.uvi)
-    # chart.datasets[0].bars[0].fillColor = 'green'
+    chart.datasets[0].bars[0].fillColor = getColour(data.uvi)
     chart.update();
 
   socket.on 'onconnect', () ->
     console.log 'connected..'
+
+  getColour = (uvi) ->
+    uvi = parseFloat(uvi)
+    if (uvi >= 11)
+      # purple
+      return 'rgba(112,47,160,0.8)'
+    else if (uvi >= 8)
+      # red
+      return 'rgba(255,15,0,0.8)'
+    else if (uvi >= 6)
+      # orange
+      return 'rgba(230,110,26,0.8)'
+    else if (uvi >= 3)
+      # yellow
+      return 'rgba(255,255,0,0.8)'
+    else
+      # green
+      return 'rgba(56,255,0,0.8)'
